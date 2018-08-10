@@ -1,0 +1,15 @@
+{
+  "name": "uhui-cli",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "bin": {
+    "uhui": "./bin/index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "commander": "^2.16.0",
+    "download-git-repo": "^1.0.2"
+  }
+}
