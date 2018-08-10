@@ -2,7 +2,9 @@
 
 
 const program = require('commander')
-const down = require('download-git-repo')
+// const down = require('download-git-repo')
+const inquirer = require('inquirer')
+const request = require('request-promise')
 
 
 
@@ -29,30 +31,32 @@ if( slug[subcmd] ) {
 }
 
 
-
-switch(subcmd) {
-    case 'install':
-        download_temp(ProjectName)
-        break
+if ( !TempName ) {
+    getlist()
 }
 
 
-function download_temp(ProjectName) {
-    console.error('下载中...')
-    return new Promise((resolve, reject) => {
-        down('so-diao/templates', ProjectName, { clone: false}, (err) => {
-
-            if ( err ) {
-                console.error(err)
-                console.error('下载失败')
-                reject(err)
-                return
-            }
-            resolve()
-        })
-    })
-    
+async function getlist() {
+    const data = await request('https://api.github.com/repos/so-diao/templates/contents')
+    console.log(data)
+    return data
 }
+
+// inquirer.prompt([ {
+//   type: 'confirm', 
+//   name: 'test', 
+//   message: 'Are you handsome?', 
+//   default: true 
+// },
+// {
+//     type: 'confirm', 
+//   name: '222', 
+//   message: 'Are you handsome?', 
+//   default: true 
+// }]).then((answers) => { 
+//     console.log(answers)
+// })
+
 
 
 
