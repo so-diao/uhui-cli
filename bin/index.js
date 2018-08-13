@@ -2,9 +2,7 @@
 
 
 const program = require('commander')
-// const down = require('download-git-repo')
-const inquirer = require('inquirer')
-const request = require('request-promise')
+const inquirer = require('./inquirer.js')
 
 
 
@@ -31,34 +29,11 @@ if( slug[subcmd] ) {
 }
 
 
+
+
 if ( !TempName ) {
-    getlist()
+    inquirer()
 }
-
-
-async function getlist() {
-    const data = await request('https://api.github.com/repos/so-diao/templates/contents')
-    console.log(data)
-    return data
-}
-
-// inquirer.prompt([ {
-//   type: 'confirm', 
-//   name: 'test', 
-//   message: 'Are you handsome?', 
-//   default: true 
-// },
-// {
-//     type: 'confirm', 
-//   name: '222', 
-//   message: 'Are you handsome?', 
-//   default: true 
-// }]).then((answers) => { 
-//     console.log(answers)
-// })
-
-
-
 
 
 

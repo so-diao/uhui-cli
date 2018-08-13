@@ -12,7 +12,10 @@
     "commander": "^2.16.0",
     "download-git-repo": "^1.0.2",
     "inquirer": "^6.1.0",
+    "node-cmd": "^3.0.0",
     "request": "^2.87.0",
-    "request-promise": "^4.2.2"
+    "request-promise": "^4.2.2",
+    "rimraf": "^2.6.2",
+    "sync-request": "^6.0.0"
   }
 }
