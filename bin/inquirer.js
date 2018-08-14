@@ -23,7 +23,6 @@ module.exports = () => {
         }
     ]).then((answers) => {
         down(answers)
-        console.log(answers)
     })
 }
 

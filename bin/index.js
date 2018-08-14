@@ -3,6 +3,7 @@
 
 const program = require('commander')
 const inquirer = require('./inquirer.js')
+const down = require('./download.js')
 
 
 
@@ -33,9 +34,18 @@ if( slug[subcmd] ) {
 
 if ( !TempName ) {
     inquirer()
+    return
 }
 
+if ( !!TempName && ProjectName ) {
+    down({
+        name: ProjectName,
+        template: TempName
+    })
+    return
+}
 
+printHelp()
 
 
 

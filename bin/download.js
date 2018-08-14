@@ -24,7 +24,7 @@ module.exports = ({template, name}) => {
         }
         cmd.get(copyCmd, (err2) =>{
             if ( err2 ) {
-                console.log(err)
+                console.log(err2)
                 console.log('下载失败')
                 return
             }

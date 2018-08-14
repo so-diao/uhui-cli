@@ -8,6 +8,7 @@ const headers = {
 
 module.exports = () => {
 
+    console.log('加载模板列表...')
     try {
         const Templates = JSON.parse(request('GET', url, {headers}).getBody('utf8'))
 
