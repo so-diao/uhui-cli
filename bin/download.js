@@ -9,7 +9,7 @@ const cmd = require('node-cmd')
 
 
 module.exports = ({template, name}) => {
-    const folderName = 'templates'
+    const folderName = 'templates' + Date.now()
     const sourcePath = (`${folderName}*)(*${template}`).replace('*)(*', '\\')
     const targetPath = name
     const copyCmd = `echo D | xcopy ${sourcePath} ${targetPath} /ey`
@@ -29,7 +29,7 @@ module.exports = ({template, name}) => {
                 return
             }
 
-            rimraf('templates', () => {
+            rimraf(folderName, () => {
 
                 console.log('下载成功')
             })
